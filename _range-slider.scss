@@ -1,0 +1,72 @@
+$sliderRailBorderRadius: 100%;
+$sliderRailHeight: rem(3px);
+
+.c-range-slider__container {
+  position: relative;
+  margin: 0 0 rem(10px);
+  padding: rem(10px);
+  background: $gray-300;
+  border: $border-width solid $gray-400;
+}
+
+.c-range-slider__scale {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 rem(6px);
+}
+
+.c-range-slider__mark {
+  height: 6px;
+  width: 1px;
+  background-color: $gray-600;
+}
+
+.c-range-slider__root {
+  position: relative;
+  display: block;
+  height: $sliderRailHeight;
+  width: 100%;
+  cursor: pointer;
+
+  touch-action: none;
+}
+
+.c-range-slider__rail {
+  position: absolute;
+  display: block;
+  height: $sliderRailHeight;
+  width: 100%;
+  background-color: $gray-600;
+  border-radius: sliderRailBorderRadius;
+}
+
+.c-range-slider__track {
+  position: absolute;
+  display: block;
+  height: $sliderRailHeight;
+  background-color: map-get($theme-colors, secondary);
+  border-radius: sliderRailBorderRadius;
+}
+
+// TODO: Remove
+.c-range-slider__track {
+  left: 0;
+  width: 100%;
+}
+
+.c-range-slider__thumb {
+  position: absolute;
+  height: 10px;
+  width: 20px;
+  background-color: $white;
+  border: solid $gray-600;
+  border-width: 0 $border-width $border-width;
+
+  &--max {
+    left: calc(100% - 10px);
+  }
+
+  &--min {
+    left: calc(0% - 10px);
+  }
+}
